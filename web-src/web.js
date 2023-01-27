@@ -257,9 +257,11 @@ function refreshNearby(coordinates, nearbyUsers) {
 
         let uHtml = `
             <div class="list-group-item list-group-item-action list-item" data-user-id="${user.relId}">
+				
                 <div><a href="#"><span class="w-48 avatar gd-primary"><img src="${user.photo}" alt="."></span></a>
                 </div>
                 <div class="flex user-info"><a href="#" class="item-author text-color">${user.name}</a>
+					<div>tg id:<span>${user.userId}</span></div>
                     <div class="item-except text-sm h-1x">#${user.relId} - 
                     Distances: <span class="badge badge-primary badge-pill">${user.distances.length}</span> 
                     Locations: <span class="badge badge-primary badge-pill">${user.locations.length}</span></div>
