@@ -249,7 +249,7 @@ function refreshNearby(coordinates, nearbyUsers) {
 
     for (let i in usersSorted) {
         let user = usersSorted[i];
-
+		user.search="http://192.168.56.1:5240/telegram?id="+user.userId;
         if (usersIgnored.includes(user.relId)) {
             console.log(`Skipping user ${user.relId}`);
             continue;
@@ -261,7 +261,7 @@ function refreshNearby(coordinates, nearbyUsers) {
                 <div><a href="#"><span class="w-48 avatar gd-primary"><img src="${user.photo}" alt="."></span></a>
                 </div>
                 <div class="flex user-info"><a href="#" class="item-author text-color">${user.name}</a>
-					<div>tg id:<span>${user.userId}</span></div>
+					<div>tg id:<a target="blank" href="${user.search}">${user.userId}</a></div>
                     <div class="item-except text-sm h-1x">#${user.relId} - 
                     Distances: <span class="badge badge-primary badge-pill">${user.distances.length}</span> 
                     Locations: <span class="badge badge-primary badge-pill">${user.locations.length}</span></div>
